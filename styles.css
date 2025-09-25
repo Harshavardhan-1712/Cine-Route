@@ -1,0 +1,633 @@
+* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Design System Variables */
+:root {
+    /* Cinema Dark Theme */
+    --background: hsl(220, 15%, 8%);
+    --foreground: hsl(0, 0%, 98%);
+
+    --card: hsl(220, 15%, 12%);
+    --card-foreground: hsl(0, 0%, 95%);
+
+    --popover: hsl(220, 15%, 12%);
+    --popover-foreground: hsl(0, 0%, 95%);
+
+    /* BookMyShow Red Primary */
+    --primary: hsl(0, 84%, 60%);
+    --primary-foreground: hsl(0, 0%, 98%);
+
+    /* Dark Secondary */
+    --secondary: hsl(220, 15%, 18%);
+    --secondary-foreground: hsl(0, 0%, 90%);
+
+    --muted: hsl(220, 15%, 15%);
+    --muted-foreground: hsl(0, 0%, 65%);
+
+    /* Golden Accent */
+    --accent: hsl(45, 93%, 58%);
+    --accent-foreground: hsl(220, 15%, 8%);
+
+    --destructive: hsl(0, 84%, 60%);
+    --destructive-foreground: hsl(0, 0%, 98%);
+
+    --border: hsl(220, 15%, 20%);
+    --input: hsl(220, 15%, 18%);
+    --ring: hsl(0, 84%, 60%);
+
+    /* Cinema Specific Colors */
+    --cinema-red: hsl(0, 84%, 60%);
+    --cinema-gold: hsl(45, 93%, 58%);
+    --cinema-dark: hsl(220, 15%, 8%);
+    --cinema-surface: hsl(220, 15%, 12%);
+    --cinema-elevated: hsl(220, 15%, 18%);
+
+    --radius: 0.75rem;
+}
+
+/* Base styles */
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Layout utilities */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.space-x-4 > * + * {
+    margin-left: 1rem;
+}
+
+.space-y-4 > * + * {
+    margin-top: 1rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+/* Flex utilities */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Background colors */
+.bg-cinema-dark {
+    background-color: var(--cinema-dark);
+}
+
+.bg-cinema-surface {
+    background-color: var(--cinema-surface);
+}
+
+.bg-cinema-red {
+    background-color: var(--cinema-red);
+}
+
+.bg-card {
+    background-color: var(--card);
+}
+
+.bg-input {
+    background-color: var(--input);
+}
+
+/* Text colors */
+.text-foreground {
+    color: var(--foreground);
+}
+
+.text-muted-foreground {
+    color: var(--muted-foreground);
+}
+
+.text-cinema-red {
+    color: var(--cinema-red);
+}
+
+.text-cinema-gold {
+    color: var(--cinema-gold);
+}
+
+.text-primary-foreground {
+    color: var(--primary-foreground);
+}
+
+/* Border */
+.border {
+    border: 1px solid var(--border);
+}
+
+.border-b {
+    border-bottom: 1px solid var(--border);
+}
+
+.border-border {
+    border-color: var(--border);
+}
+
+/* Border radius */
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.rounded-lg {
+    border-radius: var(--radius);
+}
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+/* Spacing */
+.p-2 {
+    padding: 0.5rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.m-2 {
+    margin: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+/* Text utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+/* Position */
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.top-4 {
+    top: 1rem;
+}
+
+.right-4 {
+    right: 1rem;
+}
+
+/* Z-index */
+.z-40 {
+    z-index: 40;
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+/* Display */
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+/* Transitions */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background-color: var(--cinema-red);
+    color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+    background-color: hsl(0, 84%, 55%);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--foreground);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    background-color: var(--muted);
+}
+
+.btn-outline.active {
+    background-color: var(--cinema-red);
+    color: var(--primary-foreground);
+    border-color: var(--cinema-red);
+}
+
+.btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+/* Movie Card */
+.movie-card {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border);
+}
+
+.movie-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px hsl(0 84% 60% / 0.3);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 1rem;
+}
+
+.movie-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+}
+
+.movie-genre {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.movie-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--cinema-gold);
+    font-size: 0.875rem;
+}
+
+/* Page Navigation */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--muted);
+    border-top: 4px solid var(--cinema-red);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Toast */
+.toast {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+}
+
+.toast.error {
+    border-color: var(--destructive);
+    background-color: hsl(0, 84%, 60%, 0.1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Seat Selection */
+.seat-map {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+}
+
+.screen {
+    width: 80%;
+    height: 8px;
+    background: linear-gradient(135deg, var(--cinema-gold), hsl(35, 85%, 50%));
+    margin: 0 auto 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 20px hsl(45, 93%, 58%, 0.2);
+}
+
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.5rem;
+    margin: 2rem 0;
+    justify-items: center;
+}
+
+.seat {
+    width: 32px;
+    height: 32px;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.75rem;
+}
+
+.seat.available {
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+}
+
+.seat.available:hover {
+    background-color: var(--cinema-red);
+    color: var(--primary-foreground);
+}
+
+.seat.selected {
+    background-color: var(--cinema-red);
+    color: var(--primary-foreground);
+}
+
+.seat.occupied {
+    background-color: var(--border);
+    color: var(--muted-foreground);
+    cursor: not-allowed;
+}
+
+/* Payment Form */
+.payment-form {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid var(--border);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--foreground);
+    font-size: 1rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--cinema-red);
+    box-shadow: 0 0 0 2px hsl(0, 84%, 60%, 0.2);
+}
+
+.form-input::placeholder {
+    color: var(--muted-foreground);
+}
+
+/* QR Code */
+.qr-code {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .sm\\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .xl\\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Hover effects */
+.hover\\:text-foreground:hover {
+    color: var(--foreground);
+}
+
+.hover\\:bg-cinema-red\\\/90:hover {
+    background-color: hsl(0, 84%, 55%);
+}
+
+/* Width utilities */
+.w-64 {
+    width: 16rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Height utilities */
+.h-96 {
+    height: 24rem;
+}
+
+.h-64 {
+    height: 16rem;
+}

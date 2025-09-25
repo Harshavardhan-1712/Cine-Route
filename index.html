@@ -1,0 +1,160 @@
+<!DOCTYPE html> html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Book Movie Tickets Online | Best Cinema Experience</title>
+    <meta name="description" content="Book movie tickets online with CineBook. Browse latest movies, select seats, and enjoy the ultimate cinema experience. Fast booking, secure payments, instant confirmation.">
+    <meta name="author" content="CineBook">
+    
+    <meta property="og:title" content="CineBook - Book Movie Tickets Online">
+    <meta property="og:description" content="Book movie tickets online with CineBook. Browse latest movies, select seats, and enjoy the ultimate cinema experience.">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="min-h-screen bg-cinema-dark">
+        <!-- Toast Container -->
+        <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+        
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="fixed inset-0 bg-black/50 flex items-center justify-center z-40 hidden">
+            <div class="spinner"></div>
+        </div>
+        
+        <!-- Movies Page -->
+        <div id="movies-page" class="page active">
+            <!-- Header -->
+            <header class="bg-cinema-surface border-b border-border">
+                <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <h1 class="text-2xl font-bold text-cinema-red">CineBook</h1>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <input
+                                type="text"
+                                id="search-input"
+                                placeholder="Search movies..."
+                                class="w-64 px-4 py-2 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-cinema-red"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="container mx-auto px-4 py-6">
+                <!-- Hero Section -->
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold text-foreground mb-2">
+                        Book Movie Tickets
+                    </h1>
+                    <p class="text-muted-foreground text-lg">
+                        Discover the latest movies and book your seats instantly
+                    </p>
+                </div>
+
+                <!-- Genre Filter -->
+                <div id="genre-filter" class="flex flex-wrap gap-2 mb-6 justify-center">
+                    <!-- Genres will be populated by JS -->
+                </div>
+
+                <!-- Movies Grid -->
+                <div id="movies-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Movies will be populated by JS -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Movie Details Page -->
+        <div id="movie-details-page" class="page">
+            <div class="min-h-screen bg-cinema-dark">
+                <div class="relative">
+                    <!-- Hero Background -->
+                    <div id="movie-hero" class="relative h-96 bg-gradient-to-b from-transparent to-cinema-dark">
+                        <!-- Content will be populated by JS -->
+                    </div>
+                    
+                    <div class="container mx-auto px-4 py-6">
+                        <div id="movie-details-content">
+                            <!-- Movie details content will be populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Showtimes Page -->
+        <div id="showtimes-page" class="page">
+            <div class="min-h-screen bg-cinema-dark">
+                <div class="container mx-auto px-4 py-6">
+                    <div class="mb-6">
+                        <button id="showtimes-back-btn" class="flex items-center text-muted-foreground hover:text-foreground mb-4">
+                            <span>← Back to Movie</span>
+                        </button>
+                        <h1 class="text-3xl font-bold text-foreground mb-2">Select Showtime</h1>
+                    </div>
+                    
+                    <div id="showtimes-content">
+                        <!-- Showtimes content will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seat Selection Page -->
+        <div id="seat-selection-page" class="page">
+            <div class="min-h-screen bg-cinema-dark">
+                <div class="container mx-auto px-4 py-6">
+                    <div class="mb-6">
+                        <button id="seats-back-btn" class="flex items-center text-muted-foreground hover:text-foreground mb-4">
+                            <span>← Back to Showtimes</span>
+                        </button>
+                        <h1 class="text-3xl font-bold text-foreground mb-2">Select Seats</h1>
+                    </div>
+                    
+                    <div id="seat-selection-content">
+                        <!-- Seat selection content will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Page -->
+        <div id="payment-page" class="page">
+            <div class="min-h-screen bg-cinema-dark">
+                <div class="container mx-auto px-4 py-6">
+                    <div class="mb-6">
+                        <button id="payment-back-btn" class="flex items-center text-muted-foreground hover:text-foreground mb-4">
+                            <span>← Back to Seats</span>
+                        </button>
+                        <h1 class="text-3xl font-bold text-foreground mb-2">Payment</h1>
+                    </div>
+                    
+                    <div id="payment-content">
+                        <!-- Payment content will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Confirmation Page -->
+        <div id="confirmation-page" class="page">
+            <div class="min-h-screen bg-cinema-dark">
+                <div class="container mx-auto px-4 py-6">
+                    <div id="confirmation-content">
+                        <!-- Confirmation content will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="movie-model.js"></script>
+    <script src="movie-presenter.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
